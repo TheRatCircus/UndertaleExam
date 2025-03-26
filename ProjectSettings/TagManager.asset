@@ -8,6 +8,7 @@ TagManager:
   - Red
   - Yellow
   - Green
+  - ItemUi
   layers:
   - Default
   - TransparentFX

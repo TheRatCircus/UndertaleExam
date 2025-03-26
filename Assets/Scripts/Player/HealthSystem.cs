@@ -30,6 +30,14 @@ public class HealthSystem : MonoBehaviour
         UpdateHealthUI();
     }
 
+    public void Heal(int healAmount)
+    {
+        currentHP += healAmount;
+        currentHP = Mathf.Clamp(currentHP, 0, maxHP);
+        healthSlider.value = currentHP;
+        UpdateHealthUI();
+    }
+
     void UpdateHealthUI()
     {
         healthText.text = currentHP + "/" + maxHP;
