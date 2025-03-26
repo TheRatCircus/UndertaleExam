@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-    // Reference to the EnemyObjectt ScriptableObject
     public EnemyObjectt enemyData;
 
     public float maxHp;
@@ -10,12 +9,12 @@ public class EnemyHealth : MonoBehaviour
 
     private void Start()
     {
-        // Initialize the max and current health from the enemy data
+
         maxHp = enemyData.Hp;
         currentHp = maxHp;
     }
 
-    private void Update()
+    private void Update() //for debugging
     {
         /*if (Input.GetKeyDown(KeyCode.Space))
         {

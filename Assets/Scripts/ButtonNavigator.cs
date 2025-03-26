@@ -4,8 +4,8 @@ using UnityEngine.EventSystems;
 
 public class ButtonNavigator : MonoBehaviour
 {
-    public Button[] buttons; // Assign buttons in the Inspector
-    public GameObject[] objectsToEnable; // Assign corresponding objects in the Inspector
+    public Button[] buttons; 
+    public GameObject[] objectsToEnable; 
     private int currentIndex = 0;
     private bool navigationEnabled = true;
 
@@ -16,11 +16,9 @@ public class ButtonNavigator : MonoBehaviour
             EventSystem.current.SetSelectedGameObject(buttons[currentIndex].gameObject);
         }
 
-        // Hide the mouse cursor and lock it to the center of the screen
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
-        // Add event listeners for button hover
         for (int i = 0; i < buttons.Length; i++)
         {
             int index = i;
