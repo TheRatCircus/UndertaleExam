@@ -9,6 +9,7 @@ TagManager:
   - Yellow
   - Green
   - ItemUi
+  - Enemy
   layers:
   - Default
   - TransparentFX
