@@ -40,6 +40,11 @@ public class ButtonNavigator : MonoBehaviour
     {
         if (!navigationEnabled) return;
 
+        if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter))
+        {
+            return; // Ignore Enter key input
+        }
+
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             Navigate(1);
@@ -53,6 +58,7 @@ public class ButtonNavigator : MonoBehaviour
             PressButton();
         }
     }
+
 
     void Navigate(int direction)
     {

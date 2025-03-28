@@ -4,7 +4,7 @@ public class MenuStart : MonoBehaviour
 {
     void Start()
     {
-        Invoke("DisableObject", 2f);
+        Invoke("DisableObject", 4f);
     }
 
     void DisableObject()

@@ -3,14 +3,12 @@ using UnityEngine;
 public class AttackDuration : MonoBehaviour
 {
     public float duration = 4.2f;
-    private SwitchBack switchBack;  // Reference to the SwitchBack script
+    private SwitchBack switchBack; 
 
     void Start()
     {
-        // Find the SwitchBack script in the scene (if it's attached to an object)
         switchBack = FindObjectOfType<SwitchBack>();
 
-        // Debug message to confirm if the SwitchBack script was found
         if (switchBack != null)
         {
             Debug.Log("Found SwitchBack script in the scene.");
@@ -28,10 +26,8 @@ public class AttackDuration : MonoBehaviour
         {
             if (switchBack != null)
             {
-                // Destroy all children of the current object
                 DestroyAllChildren();
 
-                // Call the StartAnimationAndDisableObject before destroying the object
                 switchBack.StartAnimationAndDisableObject();
             }
             else
@@ -39,20 +35,17 @@ public class AttackDuration : MonoBehaviour
                 Debug.LogWarning("SwitchBack script not found, skipping animation.");
             }
 
-            // Destroy the object itself after triggering the animation
             Destroy(gameObject);
         }
     }
 
     private void DestroyAllChildren()
     {
-        // Loop through all child objects and destroy them
         foreach (Transform child in transform)
         {
             Destroy(child.gameObject);
         }
 
-        // Debug message confirming all children were destroyed
         Debug.Log("Destroyed all children of: " + gameObject.name);
     }
 }

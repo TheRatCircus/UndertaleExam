@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: TestEnemy
   m_EditorClassIdentifier: 
   Name: TestEnemy
-  Hp: 80
+  Hp: 50
   attackPrefabs:
   - {fileID: 8502448012186370077, guid: 644dcd9919343b643b2494f48c3d968e, type: 3}
+  - {fileID: 4205390635156152103, guid: a3c991477bae57a42beb71f84035696e, type: 3}
+  - {fileID: 5736393411309020178, guid: c10172bef338ef645a4adbe726f1f2b7, type: 3}

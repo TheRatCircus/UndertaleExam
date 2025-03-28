@@ -23,6 +23,7 @@ public class Attack : MonoBehaviour
     public EnemyHealth enemyHealth;
     public Text damageText;
     public GameObject damageTextObject;
+    public GameObject AudioObject;
 
     private float damageAmount = 3f;
     private float damageMultiplier = 1f;
@@ -79,7 +80,11 @@ public class Attack : MonoBehaviour
 
         indicatorDisable.SetActive(false);
 
+        AudioObject.SetActive(true);
+
         StartCoroutine(WaitAndEnableNavigation());
+
+
     }
 
     private IEnumerator ShowDamageEffectThenText(float damage)
@@ -110,6 +115,7 @@ public class Attack : MonoBehaviour
         if (damageTextObject != null)
         {
             damageTextObject.SetActive(false);
+            AudioObject.SetActive(false);
 
         }
     }
