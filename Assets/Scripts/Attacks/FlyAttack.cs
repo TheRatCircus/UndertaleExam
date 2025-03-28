@@ -7,22 +7,21 @@ public class FlyAttack : MonoBehaviour
     public float pauseTime = 0.3f;
     public float pauseDuration = 0.1f;
     public float separationDistance = 1.5f;
-    public float damage = 5f;  // Damage the fly does to the player
+    public float damage = 5f; 
 
     private Transform player;
     private bool isMoving = false;
     private Vector2 moveDirection;
 
-    private HealthSystem healthSystem; // Reference to the player's health system
+    private HealthSystem healthSystem; 
 
     void Start()
     {
-        // Try to get the HealthSystem component from the empty GameObject
         healthSystem = GameObject.FindObjectOfType<HealthSystem>();
 
         if (healthSystem != null)
         {
-            player = GameObject.FindGameObjectWithTag("Player").transform;  // Get the player for movement purpose
+            player = GameObject.FindGameObjectWithTag("Player").transform; 
         }
 
         float initialDelay = Random.Range(0f, 0.04f);
@@ -85,11 +84,9 @@ public class FlyAttack : MonoBehaviour
         {
             if (healthSystem != null)
             {
-                // Use the healthSystem from the empty GameObject to apply damage to the player
-                healthSystem.TakeDamage((int)damage);  // Cast the float damage to int
+                healthSystem.TakeDamage((int)damage); 
             }
 
-            // Destroy the FlyAttack object after it deals damage
             Destroy(gameObject);
         }
     }

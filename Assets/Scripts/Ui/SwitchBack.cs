@@ -27,7 +27,7 @@ public class SwitchBack : MonoBehaviour
         {
             animator.SetTrigger("TextOut");
             objectToDisable.SetActive(false);
-            StartCoroutine(EnableNavigationAfterDelay(1f)); // Start coroutine with a 1-second delay
+            StartCoroutine(EnableNavigationAfterDelay(1f));
             Debug.Log("Animation triggered and object disabled.");
         }
         else
@@ -39,8 +39,8 @@ public class SwitchBack : MonoBehaviour
     // Coroutine to enable navigation after a delay
     private IEnumerator EnableNavigationAfterDelay(float delay)
     {
-        yield return new WaitForSeconds(delay); // Wait for the specified delay
-        buttonNavigator.EnableNavigation(); // Enable navigation after delay
+        yield return new WaitForSeconds(delay); 
+        buttonNavigator.EnableNavigation(); 
         Debug.Log("Navigation enabled after delay.");
     }
 }

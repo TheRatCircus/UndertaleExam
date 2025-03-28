@@ -20,7 +20,7 @@ public class SwitchObject : MonoBehaviour
         yield return new WaitForSeconds(0.7f);
         PlayerSoul.SetActive(true);
 
-        yield return new WaitForSeconds(0.5f); // Delay before spawning the prefab
+        yield return new WaitForSeconds(0.5f); 
 
         SpawnRandomPrefab();
     }
@@ -32,7 +32,6 @@ public class SwitchObject : MonoBehaviour
             int randomIndex = Random.Range(0, enemyObject.AttackPrefabs.Count);
             GameObject prefabToSpawn = enemyObject.AttackPrefabs[randomIndex];
 
-            // Instantiate the prefab at the prefab's own original position
             Instantiate(prefabToSpawn, prefabToSpawn.transform.position, Quaternion.identity);
         }
     }

@@ -7,23 +7,21 @@ public class HealthSystem : MonoBehaviour
     public int currentHP;
     public Slider healthSlider;
     public Text healthText;
-    public GameObject gameOverScreen; // Assign this in the Inspector to the object that should appear when you die
-    public HealthSystem playerHealthSystem; // Reference to the player's HealthSystem
+    public GameObject gameOverScreen;
+    public HealthSystem playerHealthSystem; 
 
     void Start()
     {
-        // Initialize the health to max at the start, regardless of whether the player is active
-        currentHP = maxHP; // Set to max HP to avoid it being 0 at the start
+        currentHP = maxHP; 
         healthSlider.maxValue = maxHP;
         healthSlider.value = currentHP;
         UpdateHealthUI();
 
         if (gameOverScreen != null)
         {
-            gameOverScreen.SetActive(false); // Ensure the game-over screen is hidden at the start
+            gameOverScreen.SetActive(false); 
         }
 
-        // If the playerHealthSystem reference is assigned, update the player's health as well
         if (playerHealthSystem != null)
         {
             playerHealthSystem.currentHP = currentHP;
@@ -70,11 +68,11 @@ public class HealthSystem : MonoBehaviour
     void Die()
     {
         Debug.Log("Player has died. Game Paused.");
-        Time.timeScale = 0f; // Pause the game
+        Time.timeScale = 0f;
 
         if (gameOverScreen != null)
         {
-            gameOverScreen.SetActive(true); // Show the game-over screen
+            gameOverScreen.SetActive(true);
         }
     }
 

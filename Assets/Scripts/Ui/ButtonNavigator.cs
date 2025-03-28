@@ -86,11 +86,11 @@ public class ButtonNavigator : MonoBehaviour
     {
         buttons[currentIndex].onClick.Invoke();
         DisableObject(currentIndex);
-        navigationEnabled = false; // Disable arrow key navigation
+        navigationEnabled = false; 
     }
 
     public void EnableNavigation()
     {
-        navigationEnabled = true; // Call this method to re-enable navigation
+        navigationEnabled = true;
     }
 }
